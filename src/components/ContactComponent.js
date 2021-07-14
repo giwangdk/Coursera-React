@@ -8,7 +8,6 @@ const maxLength= (len)=>(val)=>!(val) || (val.length<= len);
 const minLength= (len)=>(val)=>(val) && (val.length>= len);
 
 const isNumber = (val) => !isNaN(Number(val));
-const validEmail = (val) =>/^[A-Z0-9._%+-]+@[A_Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
 
 
 class Contact extends Component {
@@ -152,7 +151,7 @@ class Contact extends Component {
                                 <Col md={10}>
                                     <Control.text model=".email" className="form-control" id="email" name="email" placeholder="Email"
                                     validators={{
-                                        required,validEmail
+                                        required
                                     }}/>
                                     <Errors 
                                         className="text-danger"
