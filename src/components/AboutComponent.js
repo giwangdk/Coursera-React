@@ -1,7 +1,7 @@
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import {baseUrl} from './shared/baseUrl';
+import {baseUrl} from '../shared/baseUrl';
 
 
 
@@ -29,9 +29,11 @@ function RenderLeader({leader}){
 };
 
 const  About= (props) => {
-    const leaders = props.leaders.map((leader) => {
+    const leaders = props.leaders.leaders.map((leader) => {
         return (
-            <RenderLeader leader={leader} key={leader.id}/>
+            <RenderLeader leader={leader} key={leader.id}
+                            isLoading = {leader.leadersLoading}
+                            errMess = {leader.leadersErrMess}/>
         );
     });
 
